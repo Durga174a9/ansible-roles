@@ -1,0 +1,21 @@
+---
+- name: setting up app directory
+  ansible.builtin.import_role:
+    name: common
+    tasks_from: app-set-up.yaml
+
+
+- name: setting nodejs
+  ansible.builtin.import_role:
+    name: common
+    tasks_from: nodejs.yaml
+
+- name: setting up mongodb
+  ansible.builtin.import_role:
+    name: common
+    tasks_from: mongodb-setup.yaml
+
+- name: restarting and enabling service
+  ansible.builtin.import_role:
+    name: common
+    tasks_from: systemd.yaml
