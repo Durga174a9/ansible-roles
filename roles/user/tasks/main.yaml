@@ -1,4 +1,3 @@
----
 - name: setting up app directory
   ansible.builtin.import_role:
     name: common
