@@ -1,0 +1,14 @@
+- name: setting up folders
+  ansible.builtin.import_role:
+    name: common
+    tasks_from: app-set-up.yaml
+
+- name: setting nodejs 
+  ansible.builtin.import_role:
+    name: common
+    tasks_from: nodejs.yaml
+
+- name: cpoying and restarting service
+  ansible.builtin.import_role:
+    name: common
+    tasks_from: systemd.yaml

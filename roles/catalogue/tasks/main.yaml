@@ -1,0 +1,34 @@
+---
+- name: setting app
+  ansible.builtin.import_role:
+    name: common
+    tasks_from: app-set-up.yaml
+
+- name: setting nodejs application
+  ansible.builtin.import_role:
+    name: common
+    tasks_from: nodejs.yaml
+
+# - name: copying service file
+#   ansible.builtin.copy:
+#     src: catalogue.service
+#     dest: /etc/systemd/system/catalogue.service
+
+- name: setting up mongodb
+  ansible.builtin.import_role:
+    name: common
+    tasks_from: mongodb-setup.yaml
+
+- name: restaring and enabling
+  ansible.builtin.import_role:
+    name: common
+    tasks_from: systemd.yaml
+
+    
+
+
+
+
+
+
+
