@@ -12,7 +12,7 @@
   args:
     chdir: /app
 
-- name: Install dependencies
-  ansible.builtin.command: npm install
-  args:
-    chdir: /app
+# - name: Install dependencies
+#   ansible.builtin.command: npm install
+#   args:
+#     chdir: /app
