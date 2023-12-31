@@ -9,6 +9,6 @@
 
 - name: "Enabling and restarting {{ component }}"
   ansible.builtin.service:
-    name: "{{ component }}""
+    name: "{{ component }}"
     state: restarted
     enabled: yes
