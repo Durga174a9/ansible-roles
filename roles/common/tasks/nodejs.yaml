@@ -6,13 +6,13 @@
     name: 'nodejs'
     state: present
 
-- name: "Installing dependencies"
-  ansible.builtin.command:
-    command: npm install
-  args:
-    chdir: /app
-
-# - name: Install dependencies
-#   ansible.builtin.command: npm install
+# - name: "Installing dependencies"
+#   ansible.builtin.command:
+#     command: npm install
 #   args:
 #     chdir: /app
+
+- name: Install dependencies
+  ansible.builtin.command: npm install
+  args:
+    chdir: /app
