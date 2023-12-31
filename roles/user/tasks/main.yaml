@@ -1,20 +1,26 @@
 - name: setting up app directory
   ansible.builtin.import_role:
     name: common
-    tasks_from: app-set-up.yaml
+    tasks_from: app-set-up
 
 
 - name: setting nodejs
   ansible.builtin.import_role:
     name: common
-    tasks_from: nodejs.yaml
+    tasks_from: nodejs
 
 - name: setting up mongodb
   ansible.builtin.import_role:
     name: common
-    tasks_from: mongodb-setup.yaml
+    tasks_from: mongodb-setup
 
 - name: restarting and enabling service
   ansible.builtin.import_role:
     name: common
-    tasks_from: systemd.yaml
+    tasks_from: systemd
+
+
+# - name: Run tasks/other.yaml instead of 'main'
+#   ansible.builtin.import_role:
+#     name: myrole
+#     tasks_from: other
