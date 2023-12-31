@@ -1,14 +1,14 @@
 - name: "copying mongorepo "
-    ansible.builtin.copy:
-      src: mongorepo
-      dest: /etc/yum.repos.d/mongo.repo
+  ansible.builtin.copy:
+    src: mongorepo
+    dest: /etc/yum.repos.d/mongo.repo
 
-  - name: 'installing mongorepo client'
-    ansible.builtin.package:
-      name: mongodb-org-shell
-      state: present
+- name: 'installing mongorepo client'
+  ansible.builtin.package:
+    name: mongodb-org-shell
+    state: present
 
-  - name: "get the catalogue entries count"
+- name: "get the catalogue entries count"
   ansible.builtin.shell:  mongo --host {{MONGODB_HOST}} --quiet --eval 'db = db.getSiblingDB("catalogue"); db.products.count()'
   register: products_count
   when: component == "catalogue"
