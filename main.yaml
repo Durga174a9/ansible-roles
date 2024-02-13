@@ -4,9 +4,4 @@
   become: yes
   roles:
   - "{{ component }}"
-  tasks:
-  - name: setting up app directory
-    ansible.builtin.import_role:
-      name: common
-      tasks_from: app-set-up
 
